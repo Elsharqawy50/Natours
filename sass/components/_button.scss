@@ -9,12 +9,12 @@
     border-radius: 100rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
@@ -23,7 +23,7 @@
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
   &--white {
@@ -47,5 +47,30 @@
 
   &--animated {
     animation: moveToTop 0.5s ease-in-out 0.75s backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: $default-font-size;
+    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
+    padding: 3px;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white-color;
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem rgba($black-color, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.5rem 1rem rgba($black-color, 0.15);
   }
 }
