@@ -5,7 +5,6 @@
     text-decoration: none;
     text-transform: uppercase;
     padding: 1.5rem 4rem;
-    color: $dark-gray-color;
     border-radius: 100rem;
     transition: all 0.2s;
     position: relative;
@@ -28,6 +27,12 @@
 
   &--white {
     background-color: $white-color;
+    color: $dark-gray-color;
+  }
+
+  &--green {
+    background-color: $primary-color;
+    color: $white-color;
   }
 
   &::after {
