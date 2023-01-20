@@ -1,0 +1,88 @@
+.popup {
+  position: relative;
+  z-index: 6000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba($black-color, 0.8);
+  }
+
+  &__box {
+    @include centerInBox;
+    width: 75%;
+    height: 50rem;
+    background-color: $white-color;
+    position: fixed;
+    border-radius: 3px;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s 0.2s;
+  }
+
+  &__left {
+    width: 33.33333%;
+    float: left;
+  }
+
+  &__right {
+    width: 66.666667%;
+    float: left;
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem; //1em = 14px;
+    -moz-column-rule: 1px solid $light-gray-color-2;
+
+    column-count: 2;
+    column-gap: 4rem; //1em = 14px;
+    column-rule: 1px solid $light-gray-color-2;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      right: 3rem;
+      top: 3rem;
+      text-decoration: none;
+      color: $dark-gray-color-2;
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    &:hover,
+    &:active {
+      color: $primary-color;
+    }
+  }
+
+  &:target &__box {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

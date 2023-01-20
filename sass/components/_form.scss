@@ -65,9 +65,7 @@
       border-radius: 10rem;
       background-color: $primary-color-dark;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      @include centerInBox;
       visibility: hidden;
       opacity: 0;
     }
