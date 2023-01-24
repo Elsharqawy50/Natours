@@ -172,4 +172,60 @@
       font-weight: 100;
     }
   }
+
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    font-size: 1.6rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($black-color, 0.15);
+    background-color: $white-color;
+    height: auto;
+    overflow: hidden;
+
+    &__side {
+      height: auto;
+      position: relative;
+      border-radius: 0px;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 0 100%, 100% 100%, 100% 0);
+        padding: 7rem 4rem 4rem 4rem;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &:hover &__side--back {
+      z-index: 0;
+    }
+
+    &__cta {
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      position: relative;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__price {
+      &-box {
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        color: $white-color;
+      }
+
+      &-only {
+        font-size: 1.5rem;
+      }
+
+      &-value {
+        font-size: 5rem;
+        font-weight: 100;
+      }
+    }
+  }
 }

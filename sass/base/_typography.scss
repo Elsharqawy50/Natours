@@ -3,7 +3,6 @@ body {
   color: $dark-gray-color;
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  padding: 3rem;
 }
 
 .heading__primary {
@@ -17,6 +16,11 @@ body {
     font-size: 6rem;
     display: block;
     animation: moveToRight 1s ease-out;
+
+    @include respond(phone) {
+      font-size: 4rem;
+      letter-spacing: 2.5rem;
+    }
   }
 
   &--second {
@@ -25,6 +29,11 @@ body {
     font-weight: 700;
     display: block;
     animation: moveToLift 1s ease-out;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+      letter-spacing: 1rem;
+    }
   }
 }
 
@@ -43,6 +52,14 @@ body {
   transition: all 0.3s;
   letter-spacing: 0.2rem;
   font-weight: 700;
+
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
+
+  @include respond(phone) {
+    font-size: 1.9rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);

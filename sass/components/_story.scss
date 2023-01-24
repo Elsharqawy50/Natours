@@ -8,8 +8,22 @@
   box-shadow: 0 3rem 6rem rgba($black-color, 0.15);
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem 3rem;
+  }
+
+  @include respond(phone) {
+    padding: 4rem 3rem;
+    transform: skewX(0);
+  }
+
   & > * {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__picture {
@@ -22,6 +36,11 @@
     margin-right: 3rem;
     overflow: hidden;
     position: relative;
+
+    @include respond(tab-port) {
+      margin-right: 5rem;
+      margin-bottom: 0.3rem;
+    }
   }
 
   img {

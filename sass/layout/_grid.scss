@@ -1,9 +1,18 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
+  padding: 0 3rem;
+
+  @include respond(tab-port) {
+    max-width: $grid-width-small;
+  }
 
   &:not(:last-child) {
     margin-bottom: $guttar-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $guttar-vertical-small;
+    }
   }
 
   @include clearfix;
@@ -11,8 +20,17 @@
   [class^="col-"] {
     float: left;
 
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+
     &:not(:last-child) {
       margin-right: $guttar-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $guttar-vertical-small;
+      }
     }
   }
 
